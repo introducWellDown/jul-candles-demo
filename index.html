@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jul.candles — Осенняя коллекция</title>
+  <meta name="description" content="Осенняя коллекция Jul.candles — ручные свечи из соевого воска. Тёплые ароматы, стеклянный дизайн, быстрая доставка.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'ios-primary': '#007AFF',
+            'ios-secondary': '#5856D6',
+            'ios-background': '#F2F2F7',
+            'ios-card': '#FFFFFF',
+            'ios-text': '#000000',
+            'ios-text-secondary': '#8E8E93',
+            'ios-border': '#C6C6C8',
+            'ios-accent': '#FF9500',
+            'ios-success': '#34C759',
+            'ios-danger': '#FF3B30'
+          },
+          fontFamily: {
+            'ios': ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', 'sans-serif']
+          },
+          backdropBlur: {
+            'ios': '20px'
+          }
+        }
+      }
+    }
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="font-ios text-ios-text">
+  <custom-navbar></custom-navbar>
+
+  <main>
+    <!-- HERO -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden" id="home">
+      <div class="absolute inset-0 bg-gradient-to-br from-white/10 via-white/5 to-transparent"></div>
+      <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
+        <div class="inline-flex items-center px-4 py-2 rounded-full shadow-lg mb-6"
+             style="background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.3);">
+          <span class="text-xs font-semibold uppercase tracking-wider"
+                style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+            Осень 2025
+          </span>
+        </div>
+        <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight"
+            style="color: white; text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);">
+          Тёплый свет и<br>
+          <span style="background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+            натуральные
+          </span> ароматы
+        </h1>
+        <p class="text-xl mb-8 max-w-2xl mx-auto leading-relaxed"
+           style="color: rgba(255, 255, 255, 0.9); text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);">
+          Ручные свечи из 100% соевого воска. Хлопковые фитили, чистое горение и уют в каждой детали.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+          <a href="#collection" class="ios-button-primary">
+            <i data-feather="shopping-bag" class="w-5 h-5 mr-2"></i>
+            Смотреть коллекцию
+          </a>
+          <a href="#faq" class="ios-button-secondary">
+            <i data-feather="help-circle" class="w-5 h-5 mr-2"></i>
+            FAQ
+          </a>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-3 max-w-2xl mx-auto">
+          <div class="ios-chip">
+            <i data-feather="leaf" class="w-4 h-4 mr-1"></i>
+            Соевый воск
+          </div>
+          <div class="ios-chip">
+            <i data-feather="droplet" class="w-4 h-4 mr-1"></i>
+            Эфирные масла
+          </div>
+          <div class="ios-chip">
+            <i data-feather="package" class="w-4 h-4 mr-1"></i>
+            Эко-упаковка
+          </div>
+          <div class="ios-chip">
+            <i data-feather="zap" class="w-4 h-4 mr-1"></i>
+            Чистое горение
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COLLECTION -->
+    <section id="collection" class="py-20 px-6">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-bold mb-4">Осенняя коллекция</h2>
+          <p class="text-ios-text-secondary text-lg subtext-colored">
+            Шесть ароматов сезона — от пряной тыквы до дымного кедра. Цены от 800 до 1500 ₽.
+          </p>
+        </div>
+        <div id="productsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+      </div>
+    </section>
+
+    <!-- STORY -->
+    <section id="story" class="py-20 px-6">
+      <div class="max-w-4xl mx-auto">
+        <div class="ios-card p-8 rounded-3xl shadow-xl">
+          <h3 class="text-3xl font-bold mb-4">История Jul.candles</h3>
+          <p class="text-ios-text-secondary text-lg leading-relaxed">
+            Небольшие партии, ручной контроль качества и ароматические композиции, вдохновлённые осенью:
+            тыква и корица, яблоки и карамель, дымный кедр.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="py-20 px-6">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-bold mb-4">FAQ</h2>
+          <p class="text-ios-text-secondary text-lg subtext-colored">Частые вопросы о составе, доставке и упаковке.</p>
+        </div>
+        <div class="space-y-4">
+          <details class="ios-accordion">
+            <summary class="ios-accordion-summary">
+              <i data-feather="info" class="w-5 h-5 mr-3"></i>
+              Из чего сделаны свечи?
+            </summary>
+            <div class="ios-accordion-content">
+              <p class="text-ios-text-secondary">100% соевый воск, хлопковые фитили и ароматические композиции на основе эфирных масел.</p>
+            </div>
+          </details>
+          <details class="ios-accordion">
+            <summary class="ios-accordion-summary">
+              <i data-feather="shopping-cart" class="w-5 h-5 mr-3"></i>
+              Как оформить заказ?
+            </summary>
+            <div class="ios-accordion-content">
+              <p class="text-ios-text-secondary">Добавьте товары в корзину и нажмите «Оформить в Telegram» — детали доставки обсудим в чате.</p>
+            </div>
+          </details>
+          <details class="ios-accordion">
+            <summary class="ios-accordion-summary">
+              <i data-feather="gift" class="w-5 h-5 mr-3"></i>
+              Есть ли подарочная упаковка?
+            </summary>
+            <div class="ios-accordion-content">
+              <p class="text-ios-text-secondary">Да, упакуем бесплатно в крафт-коробку с лентой и открыткой.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- CART OVERLAY -->
+  <div id="cartOverlay" class="fixed inset-0 bg-black/30 backdrop-blur-ios z-40 hidden"></div>
+
+  <!-- CART DRAWER -->
+  <aside id="cartDrawer"
+         class="fixed right-0 top-0 h-full w-full max-w-md shadow-2xl z-50 transform translate-x-full transition-transform duration-300 ease-out"
+         style="background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-left: 1px solid rgba(255, 255, 255, 0.3);">
+    <div class="flex items-center justify-between p-6" style="border-bottom: 1px solid rgba(255, 255, 255, 0.2);">
+      <h4 class="text-2xl font-bold">Корзина</h4>
+      <button id="cartClose" class="ios-icon-button">
+        <i data-feather="x" class="w-6 h-6"></i>
+      </button>
+    </div>
+    <div id="cartItems" class="flex-1 overflow-y-auto p-6"></div>
+    <div class="p-6" style="border-top: 1px solid rgba(255, 255, 255, 0.2);">
+      <div class="flex items-center justify-between mb-4">
+        <span class="text-lg font-semibold">Итого</span>
+        <span id="cartTotal" class="text-2xl font-bold"
+              style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+          0 ₽
+        </span>
+      </div>
+      <button id="checkoutBtn" class="ios-button-primary w-full">
+        <i data-feather="send" class="w-5 h-5 mr-2"></i>
+        Оформить в Telegram
+      </button>
+    </div>
+  </aside>
+
+  <!-- FLOATING ACTION BUTTON -->
+  <button id="cartFab"
+          class="fixed bottom-6 right-6 w-16 h-16 rounded-full shadow-lg flex items-center justify-center transition-all duration-200 z-30"
+          style="background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.3); color: #1a1a1a;">
+    <i data-feather="shopping-bag" class="w-6 h-6"></i>
+    <span id="cartCount"
+          class="absolute -top-2 -right-2 w-6 h-6 text-white text-xs font-bold rounded-full flex items-center justify-center"
+          style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">0</span>
+  </button>
+
+  <custom-footer></custom-footer>
+
+  <script src="components/navbar.js"></script>
+  <script src="components/footer.js"></script>
+  <script src="script.js"></script>
+  <script>feather.replace();</script>
+  <script src="https://deepsite.hf.co/deepsite-badge.js"></script>
+</body>
+</html>
