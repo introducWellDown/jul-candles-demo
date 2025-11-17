@@ -11,7 +11,6 @@
    ДАННЫЕ ТОВАРОВ (ПРИМЕР)
    ----------------------------- */
 
-// Если у тебя уже есть свой массив products, замени пример ниже своим.
 const scents_list = ['Мандарин',
   'Мамин какао',
   'Имбирный пряник',
@@ -65,7 +64,7 @@ const products = [
     price: 1500,
     desc: 'Свеча, возвращающая в детство',
     imgs: [
-      'resource/cards_image/white_solo.jpg',
+      'resource/cards_image/res_solo.jpg',
       'resource/cards_image/test.jpg',
     ],
     scents: scents_list,
@@ -97,9 +96,9 @@ const products = [
     badge: 'хит'
   },
   {
-    id: 6,
+    id: 7,
     name: 'Свечка в банке',
-    price: 300,
+    price: 900,
     desc: 'Скрасит зимние вечера',
     imgs: [
       'resource/cards_image/banka_ip.jpg',
@@ -114,120 +113,8 @@ const products = [
     scents: scents_list,
     badge: 'хит',
   },
-  // {
-  //   id: 7,
-  //   name: 'Мандаринка',
-  //   price: 300,
-  //   desc: 'Свеча, которая точно скрасит празднование Нового Года',
-  //   imgs: [
-  //     'resource/cards_image/manda_solo.jpg',
-  //     'resource/cards_image/manda_k.jpg',
-  //     'resource/cards_image/manda_3k.jpg',
-  //     'resource/cards_image/manda_mnogo.jpg'
-  //   ],
-  //   scents: scents_list,
-  //   badge: 'хит'
-  // },
-  // {
-  //   id: 8,
-  //   name: 'Мандаринка',
-  //   price: 300,
-  //   desc: 'Свеча, которая точно скрасит празднование Нового Года',
-  //   imgs: [
-  //     'resource/cards_image/manda_solo.jpg',
-  //     'resource/cards_image/manda_k.jpg',
-  //     'resource/cards_image/manda_3k.jpg',
-  //     'resource/cards_image/manda_mnogo.jpg'
-  //   ],
-  //   scents: scents_list,
-  //   badge: 'хит'
-  // },
-  // {
-  //   id: 9,
-  //   name: 'Мандаринка',
-  //   price: 300,
-  //   desc: 'Свеча, которая точно скрасит празднование Нового Года',
-  //   imgs: [
-  //     'resource/cards_image/manda_solo.jpg',
-  //     'resource/cards_image/manda_k.jpg',
-  //     'resource/cards_image/manda_3k.jpg',
-  //     'resource/cards_image/manda_mnogo.jpg'
-  //   ],
-  //   scents: scents_list,
-  //   badge: 'хит'
-  // },
-  // {
-  //   id: 10,
-  //   name: 'Мандаринка',
-  //   price: 300,
-  //   desc: 'Свеча, которая точно скрасит празднование Нового Года',
-  //   imgs: [
-  //     'resource/cards_image/manda_solo.jpg',
-  //     'resource/cards_image/manda_k.jpg',
-  //     'resource/cards_image/manda_3k.jpg',
-  //     'resource/cards_image/manda_mnogo.jpg'
-  //   ],
-  //   scents: scents_list,
-  //   badge: 'хит'
-  // },
-  // {
-  //   id: 11,
-  //   name: 'Мандаринка',
-  //   price: 300,
-  //   desc: 'Свеча, которая точно скрасит празднование Нового Года',
-  //   imgs: [
-  //     'resource/cards_image/manda_solo.jpg',
-  //     'resource/cards_image/manda_k.jpg',
-  //     'resource/cards_image/manda_3k.jpg',
-  //     'resource/cards_image/manda_mnogo.jpg'
-  //   ],
-  //   scents: scents_list,
-  //   badge: 'хит'
-  // },
-  // {
-  //   id: 12,
-  //   name: 'Мандаринка',
-  //   price: 300,
-  //   desc: 'Свеча, которая точно скрасит празднование Нового Года',
-  //   imgs: [
-  //     'resource/cards_image/manda_solo.jpg',
-  //     'resource/cards_image/manda_k.jpg',
-  //     'resource/cards_image/manda_3k.jpg',
-  //     'resource/cards_image/manda_mnogo.jpg'
-  //   ],
-  //   scents: scents_list,
-  //   badge: 'хит'
-  // },
-  // {
-  //   id: 13,
-  //   name: 'Мандаринка',
-  //   price: 300,
-  //   desc: 'Свеча, которая точно скрасит празднование Нового Года',
-  //   imgs: [
-  //     'resource/cards_image/manda_solo.jpg',
-  //     'resource/cards_image/manda_k.jpg',
-  //     'resource/cards_image/manda_3k.jpg',
-  //     'resource/cards_image/manda_mnogo.jpg'
-  //   ],
-  //   scents: scents_list,
-  //   badge: 'хит'
-  // },
-  // {
-  //   id: 14,
-  //   name: 'Мандаринка',
-  //   price: 300,
-  //   desc: 'Свеча, которая точно скрасит празднование Нового Года',
-  //   imgs: [
-  //     'resource/cards_image/manda_solo.jpg',
-  //     'resource/cards_image/manda_k.jpg',
-  //     'resource/cards_image/manda_3k.jpg',
-  //     'resource/cards_image/manda_mnogo.jpg'
-  //   ],
-  //   scents: scents_list,
-  //   badge: 'хит'
-  // },
-  // Добавь остальные товары по этому же формату
-];
+]
+
 
 /* -----------------------------
    СОСТОЯНИЕ И УТИЛИТЫ
@@ -241,7 +128,7 @@ const rub = new Intl.NumberFormat('ru-RU', {
   maximumFractionDigits: 0
 });
 
-const VISIBLE_STEP = 6; // показываем по 6 карточек за раз
+const VISIBLE_STEP = 6;
 let visibleCount = VISIBLE_STEP;
 
 function loadCart() {
@@ -319,7 +206,7 @@ function injectOverlayCSS() {
   }
 
   .pc-foot {
-    margin-top: auto;   /* прижимает футер к низу карточки */
+    margin-top: auto;
     padding-top: 12px;
     display: flex;
     align-items: center;
@@ -503,7 +390,6 @@ function injectOverlayCSS() {
     color: #111111;
   }
 
-  /* текст в оверлее тёмный */
   .overlay-info,
   .overlay-title,
   .overlay-desc,
@@ -513,7 +399,7 @@ function injectOverlayCSS() {
     color: #111111;
   }
 
-  /* Кастомный select в виде карточки */
+  /* скрытый select — стили не критичны, он hidden */
   #overlayScent {
     width: 100%;
     border-radius: 999px;
@@ -525,17 +411,6 @@ function injectOverlayCSS() {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-  }
-
-  .overlay-label::after {
-    content: "▾";
-    position: absolute;
-    right: 14px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 12px;
-    pointer-events: none;
-    color: rgba(0,0,0,0.5);
   }
 
   .overlay-qty-ctrl {
@@ -568,7 +443,6 @@ function injectOverlayCSS() {
     outline: none;
   }
 
-  /* Кнопка в оверлее как настоящая кнопка */
   #overlayAddToCart {
     margin-top: 12px;
     align-self: flex-start;
@@ -591,6 +465,50 @@ function injectOverlayCSS() {
   #overlayAddToCart:active {
     transform: translateY(0);
     box-shadow: 0 6px 18px rgba(255,149,0,0.35);
+  }
+
+  /* Кастомный dropdown */
+  .overlay-select {
+    position: relative;
+    border-radius: 999px;
+    border: 1px solid rgba(0,0,0,0.12);
+    padding: 10px 40px 10px 16px;
+    background: rgba(255,255,255,0.95);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+    font-size: 14px;
+    cursor: pointer;
+  }
+  .overlay-select::after {
+    content: "▾";
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 12px;
+    color: rgba(0,0,0,0.5);
+  }
+  .overlay-select-current {
+    display: inline-block;
+  }
+  .overlay-select-options {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    margin-top: 4px;
+    border-radius: 16px;
+    background: rgba(255,255,255,0.98);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.2);
+    max-height: 260px;
+    overflow-y: auto;
+    z-index: 5;
+  }
+  .overlay-select-option {
+    padding: 8px 14px;
+    font-size: 14px;
+  }
+  .overlay-select-option:hover {
+    background: rgba(0,0,0,0.04);
   }
   `;
   const style = document.createElement('style');
@@ -624,10 +542,11 @@ function injectOverlayHTML() {
             <p class="overlay-desc"></p>
             <div class="overlay-price"></div>
 
-            <label class="overlay-label">
+            <div class="overlay-label">
               <span>Аромат</span>
-              <select id="overlayScent"></select>
-            </label>
+              <div id="overlayScentCustom" class="overlay-select"></div>
+              <select id="overlayScent" hidden></select>
+            </div>
 
             <div class="overlay-qty">
               <span class="overlay-qty-label">Количество</span>
@@ -664,7 +583,7 @@ function overlayRefs() {
     overlayTitle: qs('.overlay-title', overlayEl),
     overlayDesc: qs('.overlay-desc', overlayEl),
     overlayPrice: qs('.overlay-price', overlayEl),
-    overlayScentSelect: qs('#overlayScent', overlayEl),
+    overlayScentSelect: qs('#overlayScent', overlayEl), // скрытый select
     overlayDots: qs('.overlay-dots', overlayEl),
     overlayAddBtn: qs('#overlayAddToCart', overlayEl),
     overlayClose: qs('.overlay-close', overlayEl),
@@ -690,10 +609,70 @@ function renderOverlayImages(product) {
   overlayDots.innerHTML = product.imgs
     .map(
       (_, idx) =>
-        `<span class="overlay-dot ${idx === currentImageIndex ? 'active' : ''
-        }" data-idx="${idx}"></span>`
+        `<span class="overlay-dot ${idx === currentImageIndex ? 'active' : ''}" data-idx="${idx}"></span>`
     )
     .join('');
+}
+
+/* кастомный дропдаун для аромата */
+function renderScentSelect(product) {
+  const selectHidden = document.getElementById('overlayScent');
+  const selectCustom = document.getElementById('overlayScentCustom');
+  if (!selectHidden || !selectCustom) return;
+
+  const scents = Array.isArray(product.scents) ? product.scents : [];
+
+  // очищаем на случай повторного открытия
+  selectHidden.innerHTML = '';
+  selectCustom.innerHTML = '';
+
+  // заполняем скрытый select
+  selectHidden.innerHTML = scents
+    .map((s) => `<option value="${s}">${s}</option>`)
+    .join('');
+
+  // видимая текущая подпись
+  const current = document.createElement('span');
+  current.className = 'overlay-select-current';
+  current.textContent = scents[0] || '';
+  selectCustom.appendChild(current);
+
+  // список опций
+  const list = document.createElement('div');
+  list.className = 'overlay-select-options';
+  list.innerHTML = scents
+    .map((s) => `<div class="overlay-select-option" data-value="${s}">${s}</div>`)
+    .join('');
+  selectCustom.appendChild(list);
+  list.style.display = 'none';
+
+  // открытие/закрытие списка
+  selectCustom.onclick = (e) => {
+    e.stopPropagation();
+    list.style.display = list.style.display === 'none' ? 'block' : 'none';
+  };
+
+  // выбор опции
+  list.addEventListener('click', (e) => {
+    e.stopPropagation(); // не даём клику всплыть до selectCustom
+    const opt = e.target.closest('.overlay-select-option');
+    if (!opt) return;
+    const value = opt.dataset.value;
+    selectHidden.value = value;      // ставим выбранный аромат
+    current.textContent = value;     // обновляем текст в «таблетке»
+    list.style.display = 'none';     // закрываем список
+  });
+
+  // клик вне — закрыть
+  document.addEventListener(
+    'click',
+    (e) => {
+      if (!selectCustom.contains(e.target)) {
+        list.style.display = 'none';
+      }
+    },
+    { once: true }
+  );
 }
 
 function openProductOverlay(product) {
@@ -702,7 +681,6 @@ function openProductOverlay(product) {
     overlayTitle,
     overlayDesc,
     overlayPrice,
-    overlayScentSelect,
     overlayQtyInput
   } = overlayRefs();
 
@@ -713,14 +691,10 @@ function openProductOverlay(product) {
   overlayDesc.textContent = product.desc || '';
   overlayPrice.textContent = rub.format(product.price);
 
-  const scents = Array.isArray(product.scents) ? product.scents : [];
-  overlayScentSelect.innerHTML = scents
-    .map((s) => `<option value="${s}">${s}</option>`)
-    .join('');
-
   if (overlayQtyInput) overlayQtyInput.value = '1';
 
   renderOverlayImages(product);
+  renderScentSelect(product); // кастомный список ароматов
 
   overlayEl.classList.add('open');
   overlayEl.setAttribute('aria-hidden', 'false');
@@ -918,24 +892,21 @@ function checkoutTelegram() {
   if (!cart.length) return;
 
   const lines = cart.map((item) => {
-    const scentPart = item.scent ? ` (${item.scent})` : ""; // добавляем аромат, если есть
-    return `• ${item.name}${scentPart} × ${item.qty} = ${item.price * item.qty}₽`;
+    const scentPart = item.scent ? ` (${item.scent})` : '';
+    return `• ${item.name}${scentPart} × ${item.qty} = ${item.price * item.qty
+      }₽`;
   });
 
   const total = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
 
   const text = encodeURIComponent(
     `Здравствуйте! Хочу оформить заказ:\n` +
-    lines.join("\n") +
+    lines.join('\n') +
     `\nИтого: ${total}₽`
   );
 
-  window.open(
-    `https://t.me/bokyed?text=${text}`,
-    '_blank'
-  );
+  window.open(`https://t.me/bokyed?text=${text}`, '_blank');
 }
-
 
 /* -----------------------------
    ФОРМА «ДАВАЙТЕ ДРУЖИТЬ» → TELEGRAM
@@ -1026,7 +997,8 @@ function renderProducts() {
         </div>
         <div class="pc-body">
           <h3 class="pc-title">${product.name}</h3>
-          ${product.desc ? `<p class="pc-desc">${product.desc}</p>` : ``}
+          ${product.desc ? `<p class="pc-desc">${product.desc}</p>` : ``
+        }
           <div class="pc-foot">
             <div class="pc-price">${rub.format(product.price)}</div>
             <button class="btn btn-primary btn-add" type="button">Добавить в корзину</button>
@@ -1037,7 +1009,6 @@ function renderProducts() {
     })
     .join('');
 
-  // показать/спрятать кнопку "загрузить ещё"
   if (loadMoreBtn) {
     loadMoreBtn.style.display =
       visibleCount < products.length ? 'inline-flex' : 'none';
