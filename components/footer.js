@@ -1,7 +1,7 @@
-class CustomFooter extends HTMLElement{
-  connectedCallback(){
+class CustomFooter extends HTMLElement {
+  connectedCallback() {
     const year = new Date().getFullYear();
-    this.attachShadow({mode:'open'});
+    this.attachShadow({ mode: 'open' });
     this.shadowRoot.innerHTML = `
       <style>
         :host{ display:block }
@@ -26,7 +26,7 @@ class CustomFooter extends HTMLElement{
         <div class="wrap">
           <div>
             <h4>Jul.candles</h4>
-            <p>Ручные свечи из соевого воска и эфирных масел.</p>
+            <p>Ручные свечи из соевого воска с ароматическими отдушками.</p>
           </div>
           <div>
             <h4>Навигация</h4>
@@ -36,8 +36,8 @@ class CustomFooter extends HTMLElement{
           </div>
           <div>
             <h4>Контакты</h4>
-            <div><a href="mailto:hello@julcandles.com">hello@julcandles.com</a></div>
-            <div><a href="tel:+123456789">+1 (234) 567‑89</a></div>
+            <div><a href="tel:+79154964763">Тел.: +7 (915) 496-47-63</a></div>
+            <div><a href="https://t.me/jul_candles">Tgk: t.me/jul_candles </a></div>
           </div>
         </div>
         <div class="copy">© ${year} Jul.candles</div>

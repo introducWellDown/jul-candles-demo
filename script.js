@@ -1,25 +1,48 @@
 // Products data
+// ---- Замените старый products на этот блок ----
 const products = [
-  { id: 1, name: 'Тыквенный латте', price: 1200, desc: 'Кремовая тыква, корица и ваниль — уют кофейни в дождливый день.', img: 'https://images.unsplash.com/photo-1504548840739-580b10ae7715?q=80&w=1200&auto=format&fit=crop', badge: 'хит' },
-  { id: 2, name: 'Яблочный пирог', price: 900, desc: 'Печёные яблоки, корица и карамель — запах домашней кухни и пледа.', img: 'https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1200&auto=format&fit=crop', badge: 'топ' },
-  { id: 3, name: 'Дымный кедр', price: 1400, desc: 'Глубокий древесный аромат с дымной нотой костра после прогулки.', img: 'https://images.unsplash.com/photo-1473186505569-9c61870c11f9?q=80&w=1200&auto=format&fit=crop' },
-  { id: 4, name: 'Корица и апельсин', price: 1100, desc: 'Пряная корица и сочный цитрус — бодрящая классика сезона.', img: 'https://images.unsplash.com/photo-1519681392303-8f282b46ebdc?q=80&w=1200&auto=format&fit=crop', badge: 'новинка' },
-  { id: 5, name: 'Ваниль и каштан', price: 1500, desc: 'Сладкая ваниль и жареный каштан с ореховыми оттенками.', img: 'https://images.unsplash.com/photo-1449247709967-d4461a6a6103?q=80&w=1200&auto=format&fit=crop' },
-  { id: 6, name: 'Лесной мох', price: 1300, desc: 'Свежесть влажного мха и коры — утро в туманном лесу.', img: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=1200&auto=format&fit=crop' }
+  {
+    id: 1,
+    name: 'Мандаринка',
+    price: 300,
+    desc: 'Свеча, которая точно скрасит празднование Нового Года',
+    imgs: [
+      'resource/cards_image/manda_solo.jpg',
+      'resource/cards_image/manda_k.jpg',
+      'resource/cards_image/manda_3k.jpg',
+      'resource/cards_image/manda_mnogo.jpg'
+    ],
+    scents: ['Мандарин'],
+    badge: 'хит'
+  },
+  {
+    id: 2,
+    name: 'Яблочный пирог',
+    price: 900,
+    desc: 'Печёные яблоки...',
+    imgs: [
+      'https://images.unsplash.com/apple-1.jpg',
+      'https://images.unsplash.com/apple-2.jpg'
+    ],
+    scents: ['Яблоко', 'Корица', 'Ваниль'],
+    badge: 'топ'
+  },
+  // ... остальные товары в том же формате
 ];
+
 
 // Cart state
 let cart = [];
 const LS_KEY = 'jul_cart_v2';
 const rub = new Intl.NumberFormat('ru-RU', { style: 'currency', currency: 'RUB', maximumFractionDigits: 0 });
 
-function loadCart(){
+function loadCart() {
   try { cart = JSON.parse(localStorage.getItem(LS_KEY) || '[]'); }
   catch { cart = []; }
 }
-function saveCart(){ localStorage.setItem(LS_KEY, JSON.stringify(cart)); }
+function saveCart() { localStorage.setItem(LS_KEY, JSON.stringify(cart)); }
 
-function updateCartCount(){
+function updateCartCount() {
   const count = cart.reduce((sum, item) => sum + item.qty, 0);
   const badge = document.getElementById('cartCount');
   if (badge) {
@@ -28,7 +51,7 @@ function updateCartCount(){
   }
 }
 
-function renderProducts(){
+function renderProducts() {
   const grid = document.getElementById('productsGrid');
   if (!grid) return;
   grid.innerHTML = products.map(product => `
@@ -53,7 +76,7 @@ function renderProducts(){
   feather.replace();
 }
 
-function addToCart(productId){
+function addToCart(productId) {
   const product = products.find(p => p.id === productId);
   if (!product) return;
   const existing = cart.find(i => i.id === productId);
@@ -66,7 +89,7 @@ function addToCart(productId){
   setTimeout(() => cartFab.classList.remove('cart-bounce'), 600);
 }
 
-function changeQuantity(productId, delta){
+function changeQuantity(productId, delta) {
   const item = cart.find(i => i.id === productId);
   if (!item) return;
   item.qty += delta;
@@ -74,17 +97,17 @@ function changeQuantity(productId, delta){
   saveCart(); updateCartCount(); renderCart();
 }
 
-function removeItem(productId){
+function removeItem(productId) {
   cart = cart.filter(i => i.id !== productId);
   saveCart(); updateCartCount(); renderCart();
 }
 
-function renderCart(){
+function renderCart() {
   const cartItems = document.getElementById('cartItems');
   const cartTotal = document.getElementById('cartTotal');
   if (!cartItems || !cartTotal) return;
 
-  if (cart.length === 0){
+  if (cart.length === 0) {
     cartItems.innerHTML = `
       <div class="text-center py-12">
         <i data-feather="shopping-bag" class="w-16 h-16 mx-auto text-ios-text-secondary mb-4"></i>
@@ -127,12 +150,12 @@ function renderCart(){
   feather.replace();
 }
 
-function toggleCart(open){
+function toggleCart(open) {
   const overlay = document.getElementById('cartOverlay');
   const drawer = document.getElementById('cartDrawer');
   if (!overlay || !drawer) return;
 
-  if (open){
+  if (open) {
     overlay.classList.remove('hidden');
     drawer.classList.remove('translate-x-full');
     drawer.classList.add('cart-drawer-open');
@@ -144,7 +167,7 @@ function toggleCart(open){
   }
 }
 
-function checkout(){
+function checkout() {
   if (cart.length === 0) return;
   let message = 'Здравствуйте! Хочу оформить заказ:%0A%0A';
   let total = 0;
