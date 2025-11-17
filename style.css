@@ -1,397 +1,886 @@
-/* iOS-inspired styles with glassmorphism */
-:root {
-    --ios-radius: 12px;
-    --ios-radius-large: 24px;
-    --ios-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-    --ios-shadow-large: 0 8px 32px rgba(0, 0, 0, 0.12);
-    --glass-bg: rgba(255, 255, 255, 0.7);
-    --glass-border: rgba(255, 255, 255, 0.3);
-    --glass-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
-    --glass-backdrop: blur(20px) saturate(180%);
-    --ios-primary: #007AFF;
-    --ios-secondary: #5856D6;
-    --ios-background: #F2F2F7;
-    --ios-card: #FFFFFF;
-    --ios-text: #000000;
-    --ios-text-secondary: #8E8E93;
-    --ios-border: #C6C6C8;
-    --ios-accent: #FF9500;
-    --ios-success: #34C759;
-    --ios-danger: #FF3B30;
+/* ---------------
+   БАЗА
+   --------------- */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
 }
 
 body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+        "Segoe UI", sans-serif;
+    font-size: 16px;
+    line-height: 1.45;
+    color: #111111;
+    background: radial-gradient(circle at top, #f7f5ff 0, #f3f1fb 32%, #efeef8 60%, #ebeaf6 100%);
     -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    min-height: 100vh;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* ---------------
+   ЛЭЙАУТ
+   --------------- */
+
+.hpc-main {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.hpc-section-head {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+.hpc-section-title {
+    margin: 0;
+    font-size: 22px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.hpc-section-subtitle {
+    margin: 8px 0 0;
+    max-width: 420px;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+/* ---------------
+   HEADER
+   --------------- */
+
+.hpc-header {
+    position: fixed;
+    inset-inline: 0;
+    top: 0;
+    z-index: 40;
+    backdrop-filter: blur(20px);
+    background: linear-gradient(to bottom,
+            rgba(239, 238, 246, 0.9),
+            rgba(239, 238, 246, 0.75),
+            rgba(239, 238, 246, 0));
+    border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.hpc-header-inner {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 25px 20px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.hpc-logo {
+    font-size: 15px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.hpc-nav {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex: 1;
+}
+
+.hpc-nav-link {
+    font-size: 14px;
+    text-transform: lowercase;
+    opacity: 0.75;
     position: relative;
 }
 
-body::before {
-    content: '';
-    position: fixed;
-    top: 0;
+.hpc-nav-link::after {
+    content: "";
+    position: absolute;
     left: 0;
-    right: 0;
-    bottom: 0;
-    background:
-        radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
-        radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.2) 0%, transparent 50%);
-    pointer-events: none;
+    bottom: -3px;
+    width: 0;
+    height: 1px;
+    background: #111;
+    transition: width 0.16s ease;
+}
+
+.hpc-nav-link:hover {
+    opacity: 1;
+}
+
+.hpc-nav-link:hover::after {
+    width: 100%;
+}
+
+/* CART BUTTON IN HEADER */
+
+.hpc-cart-button {
+    position: relative;
+    border-radius: 999px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 8px 18px;
+    background: rgba(255, 255, 255, 0.85);
+    cursor: pointer;
+    font-size: 14px;
+    text-transform: lowercase;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.hpc-cart-button:hover {
+    background: rgba(255, 255, 255, 1);
+}
+
+.hpc-cart-count {
+    min-width: 20px;
+    height: 20px;
+    padding: 0 4px;
+    border-radius: 999px;
+    background: #111;
+    color: #fff;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ---------------
+   HERO
+   --------------- */
+
+.hpc-hero {
+    position: relative;
+    padding-inline: 20px;
+    padding-top: 200px;
+    overflow: hidden;
+}
+
+/* Фон на весь hero с мандаринами */
+.hpc-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("resource/cards_image/back_test.jpg");
+    background-size: cover;
+    background-position: center;
+    filter: none;
+    transform: scale(1.2);
+    z-index: -2;
+}
+
+/* Туман убран, можно оставить лёгкий градиент при желании */
+.hpc-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: none;
     z-index: -1;
 }
 
-/* Glass Button Styles */
-.ios-button-primary {
-    display: inline-flex;
+.hpc-hero-inner {
+    max-width: 1120px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+    gap: 40px;
     align-items: center;
-    justify-content: center;
-    padding: 0.75rem 1.5rem;
-    font-weight: 600;
-    border-radius: 1rem;
-    transform: scale(1);
-    transition: all 0.2s;
-    background: var(--glass-bg);
-    backdrop-filter: var(--glass-backdrop);
-    -webkit-backdrop-filter: var(--glass-backdrop);
-    border: 1px solid var(--glass-border);
-    box-shadow: var(--glass-shadow);
-    color: #1a1a1a;
-    text-decoration: none;
-    cursor: pointer;
 }
 
-.ios-button-primary svg {
-    width: 1rem;
-    height: 1rem;
-    margin-right: 0.5rem;
+.hpc-hero-text {
+    max-width: 560px;
+    padding-bottom: 10px;
+    /* новый отступ снизу */
 }
 
-.ios-button-primary:hover {
-    background: rgba(255, 255, 255, 0.85);
-    box-shadow: 0 12px 40px rgba(31, 38, 135, 0.25);
-    transform: scale(1.05);
+@media (max-width: 900px) {
+    .hpc-hero-text {
+        padding-bottom: 15px;
+        /* поменьше на мобилках */
+    }
 }
 
-.ios-button-secondary {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.75rem 1.5rem;
-    font-weight: 600;
-    border-radius: 1rem;
-    transform: scale(1);
-    transition: all 0.2s;
-    background: rgba(255, 255, 255, 0.25);
-    backdrop-filter: var(--glass-backdrop);
-    -webkit-backdrop-filter: var(--glass-backdrop);
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    box-shadow: var(--glass-shadow);
-    color: #1a1a1a;
-    text-decoration: none;
-    cursor: pointer;
+.hpc-hero-title {
+    margin: 0 0 16px;
+    font-size: 40px;
+    line-height: 1.1;
+    color: #ffffff;
+    text-shadow:
+        -2px -2px 4px rgba(0, 0, 0, 0.4),
+        2px -2px 4px rgba(0, 0, 0, 0.4),
+        -2px 2px 4px rgba(0, 0, 0, 0.4),
+        2px 2px 4px rgba(0, 0, 0, 0.4);
 }
 
-.ios-button-secondary:hover {
-    background: rgba(255, 255, 255, 0.35);
-    box-shadow: 0 12px 40px rgba(31, 38, 135, 0.25);
-    transform: scale(1.05);
+.hpc-hero-subtitle,
+.hpc-hero-kicker {
+    color: #ffffff;
+    text-shadow:
+        0 0 4px rgba(0, 0, 0, 0.7),
+        0 0 8px rgba(0, 0, 0, 0.6);
 }
 
-.ios-button-secondary svg {
-    width: 1.25rem;
-    height: 1.25rem;
-    margin-right: 0.5rem;
+
+.hpc-hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
 }
 
-.ios-icon-button {
-    padding: 0.5rem;
-    border-radius: 0.75rem;
-    transition: all 0.2s;
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    cursor: pointer;
-}
-
-.ios-icon-button:hover {
-    background: rgba(255, 255, 255, 0.3);
-    transform: scale(1.05);
-}
-
-/* Glass Card Styles */
-.ios-card {
-    background: var(--glass-bg);
-    backdrop-filter: var(--glass-backdrop);
-    -webkit-backdrop-filter: var(--glass-backdrop);
-    border: 1px solid var(--glass-border);
-    box-shadow: var(--glass-shadow);
-    border-radius: 1.5rem;
-}
-
-/* Glass Chip Styles */
-.ios-chip {
-    display: inline-flex;
-    align-items: center;
-    padding: 0.5rem 0.75rem;
-    border-radius: 9999px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    font-size: 0.875rem;
-    font-weight: 500;
-    background: rgba(255, 255, 255, 0.6);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    color: #1a1a1a;
-}
-
-/* Glass Product Card */
-.ios-product-card {
-    overflow: hidden;
-    cursor: pointer;
-    transform: scale(1);
-    transition: all 0.3s;
-    background: var(--glass-bg);
-    backdrop-filter: var(--glass-backdrop);
-    -webkit-backdrop-filter: var(--glass-backdrop);
-    border: 1px solid var(--glass-border);
-    box-shadow: var(--glass-shadow);
-    border-radius: 1.5rem;
-}
-
-.ios-product-card:hover {
-    transform: scale(1.05);
-}
-
-.ios-product-card:hover {
-    box-shadow: 0 20px 60px rgba(31, 38, 135, 0.25);
-}
-
-.ios-product-image {
+.hpc-hero-text {
     position: relative;
-    aspect-ratio: 1;
-    overflow: hidden;
-    border-top-left-radius: 1.5rem;
-    border-top-right-radius: 1.5rem;
+    max-width: 560px;
+    padding: 32px 36px 80px 32px;
+    /* сверху/справа/снизу/слева */
+    z-index: 1;
 }
 
-.ios-product-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s;
-}
-
-.ios-product-card:hover .ios-product-image img {
-    transform: scale(1.1);
-}
-
-.ios-product-badge {
+.hpc-hero-text::before {
+    content: "";
     position: absolute;
-    top: 0.75rem;
-    left: 0.75rem;
-    padding: 0.25rem 0.75rem;
-    font-size: 0.75rem;
-    font-weight: 700;
-    border-radius: 9999px;
-    background: rgba(255, 255, 255, 0.9);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    color: #1a1a1a;
+    inset: 12px 0 24px -16px;
+    /* регулируешь размер «таблички» */
+    background: radial-gradient(circle at left,
+            rgba(0, 0, 0, 0.65) 0,
+            rgba(0, 0, 0, 0.65) 45%,
+            rgba(0, 0, 0, 0.1) 100%);
+    border-radius: 32px;
+    z-index: -1;
 }
 
-.ios-product-content {
-    padding: 1.5rem;
-}
-
-.ios-product-title {
-    font-size: 1.25rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-    color: #1a1a1a;
-}
-
-.ios-product-description {
-    font-size: 0.875rem;
-    margin-bottom: 1rem;
-    color: #4a4a4a;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-}
-
-.ios-product-footer {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.ios-product-price {
-    font-size: 1.5rem;
-    font-weight: 700;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-/* Glass Accordion */
-.ios-accordion {
-    background: var(--glass-bg);
-    backdrop-filter: var(--glass-backdrop);
-    -webkit-backdrop-filter: var(--glass-backdrop);
-    border: 1px solid var(--glass-border);
-    box-shadow: var(--glass-shadow);
-    border-radius: 1.5rem;
-    overflow: hidden;
-    margin-bottom: 1rem;
-}
-
-.ios-accordion summary {
-    display: flex;
-    align-items: center;
-    padding: 1.5rem;
-    font-weight: 600;
-    font-size: 1.125rem;
-    cursor: pointer;
-    transition: all 0.2s;
-    list-style: none;
-    color: #1a1a1a;
-}
-
-.ios-accordion summary::-webkit-details-marker {
+/* Дополнительное media‑изображение не нужно, фон уже в ::before */
+.hpc-hero-media {
     display: none;
 }
 
-.ios-accordion summary:hover {
-    background: rgba(255, 255, 255, 0.1);
+/* ---------------
+   BUTTONS / LINKS
+   --------------- */
+
+.hpc-btn {
+    border-radius: 999px;
+    border: none;
+    padding: 10px 24px;
+    font-size: 14px;
+    text-transform: lowercase;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
 }
 
-.ios-accordion[open] summary {
-    background: rgba(255, 255, 255, 0.15);
+.hpc-btn-primary {
+    background: #111;
+    color: #fff;
 }
 
-.ios-accordion-content {
-    padding: 0 1.5rem 1.5rem;
-    color: #4a4a4a;
+.hpc-btn-primary:hover {
+    background: #000;
 }
 
-/* Smooth scroll */
-html {
-    scroll-behavior: smooth;
+/* .hpc-btn-ghost {
+    background: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.14);
+} */
+
+.hpc-btn-ghost:hover {
+    background: rgba(255, 255, 255, 0.9);
 }
 
-/* Glass Custom scrollbar */
-::-webkit-scrollbar {
-    width: 8px;
+/* Общие кнопки для карточек */
+.btn {
+    border-radius: 999px;
+    border: 1px solid rgba(0, 0, 0, 0.16);
+    padding: 8px 18px;
+    font-size: 14px;
+    background: rgba(255, 255, 255, 0.9);
+    cursor: pointer;
+    text-transform: lowercase;
 }
 
-::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+.btn-primary {
+    background: #111111;
+    color: #ffffff;
+    border-color: #111111;
 }
 
-::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.3);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border-radius: 4px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+.btn-primary:hover {
+    background: #000000;
 }
 
-::-webkit-scrollbar-thumb:hover {
-    background: rgba(255, 255, 255, 0.5);
+/* ---------------
+   SHOP / PRODUCTS GRID
+   --------------- */
+
+.hpc-shop {
+    position: relative;
+    padding-inline: 20px;
+    padding-top: 80px;
+    padding-bottom: 80px;
 }
 
-/* Animations */
-@keyframes slideInRight {
-    from {
-        transform: translateX(100%);
+/* светлая «карта» под секцией */
+.hpc-shop::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.88);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.06);
+    z-index: -1;
+}
+
+.hpc-products-grid {
+    max-width: 1120px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 32px;
+}
+
+/* Product card оборачивается в script.js */
+.product-card {
+    height: 100%;
+}
+
+.hpc-load-more {
+    display: block;
+    margin: 24px auto 0;
+}
+
+.hpc-load-more-wrap {
+    max-width: 1120px;
+    margin: 24px auto 0;
+    text-align: center;
+}
+
+.hpc-load-more {
+    display: inline-flex;
+    /* вернём из hpc-btn */
+    margin: 0;
+    /* центрует text-align: center у обёртки */
+}
+
+/* ---------------
+   ABOUT
+   --------------- */
+
+.hpc-about {
+    position: relative;
+    padding-inline: 20px;
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.hpc-about::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 10px;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.88);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.06);
+    z-index: -1;
+}
+
+.hpc-about-grid {
+    max-width: 1120px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.hpc-about-block {
+    padding: 20px 20px 18px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.hpc-about-title {
+    margin: 0 0 8px;
+    font-size: 15px;
+    text-transform: lowercase;
+}
+
+.hpc-about-text {
+    margin: 0;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+/* ---------------
+   NARROW IMAGE DIVIDER (FULL WIDTH)
+   --------------- */
+
+.hpc-divider-image {
+    padding: 0;
+}
+
+.hpc-divider-bg {
+    width: 100vw;
+    height: 360px;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    background-image: url("resource/cards_image/manda_3k.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+/* ---------------
+   COLLAB / FORM
+   --------------- */
+
+.hpc-collab {
+    position: relative;
+    padding-inline: 20px;
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.hpc-collab::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.88);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.06);
+    z-index: -1;
+}
+
+.hpc-collab-grid {
+    max-width: 1120px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.hpc-collab-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.hpc-collab-item {
+    display: flex;
+    gap: 16px;
+}
+
+.hpc-collab-num {
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    opacity: 0.7;
+}
+
+.hpc-collab-text {
+    margin: 0;
+    font-size: 15px;
+}
+
+.hpc-form {
+    padding: 22px 22px 20px;
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.96);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.hpc-form-title {
+    margin: 0;
+    font-size: 16px;
+}
+
+.hpc-form-text {
+    margin: 0 0 6px;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.65);
+}
+
+.hpc-field {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 13px;
+}
+
+.hpc-field-label {
+    opacity: 0.75;
+}
+
+.hpc-field input,
+.hpc-field textarea {
+    border-radius: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    padding: 8px 10px;
+    font: inherit;
+    resize: vertical;
+}
+
+.hpc-field input:focus,
+.hpc-field textarea:focus {
+    outline: none;
+    border-color: #111;
+}
+
+.hpc-form-note {
+    margin: 0;
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+/* ---------------
+   CONTACTS
+   --------------- */
+
+.hpc-contacts {
+    position: relative;
+    padding-inline: 20px;
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.hpc-contacts::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 10px;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.96);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.06);
+    z-index: -1;
+}
+
+.hpc-contacts-inner {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 20px 22px;
+    border-radius: 24px;
+    background: transparent;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.hpc-contacts-text {
+    margin: 0;
+    font-size: 14px;
+}
+
+.hpc-link {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.hpc-contacts-social {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    font-size: 14px;
+}
+
+/* ---------------
+   CART DRAWER (RIGHT SIDEBAR)
+   --------------- */
+
+.cart-drawer {
+    position: fixed;
+    inset: 0;
+    z-index: 60;
+    display: none;
+}
+
+.cart-drawer.open {
+    display: block;
+}
+
+.cart-drawer-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.cart-drawer-panel {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: min(380px, 100%);
+    height: 100%;
+    background: rgba(248, 247, 252, 0.98);
+    box-shadow: -20px 0 40px rgba(0, 0, 0, 0.22);
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-drawer-header {
+    padding: 18px 18px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.cart-drawer-header h2 {
+    margin: 0;
+    font-size: 18px;
+}
+
+#cartClose {
+    border: none;
+    width: 28px;
+    height: 28px;
+    border-radius: 999px;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.06);
+    font-size: 18px;
+}
+
+.cart-drawer-list {
+    flex: 1;
+    overflow-y: auto;
+    padding: 10px 18px 10px;
+}
+
+.cart-empty {
+    padding: 16px 0;
+    font-size: 14px;
+    opacity: 0.7;
+}
+
+/* CART ITEM */
+
+.cart-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.cart-item-main {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.cart-item-title {
+    font-size: 15px;
+}
+
+.cart-item-scent {
+    font-size: 13px;
+    opacity: 0.7;
+}
+
+.cart-item-ctrl {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: space-between;
+}
+
+.ci-dec,
+.ci-inc,
+.ci-del {
+    border: none;
+    background: rgba(0, 0, 0, 0.06);
+    width: 24px;
+    height: 24px;
+    border-radius: 999px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ci-sum {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.ci-qty {
+    min-width: 20px;
+    text-align: center;
+    font-size: 14px;
+}
+
+/* FOOTER OF DRAWER */
+
+.cart-drawer-footer {
+    padding: 14px 18px 16px;
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.cart-drawer-total {
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+}
+
+.cart-drawer-checkout {
+    width: 100%;
+    border-radius: 999px;
+    border: none;
+    padding: 10px 18px;
+    background: #111;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.cart-drawer-checkout:hover {
+    background: #000;
+}
+
+/* ---------------
+   ADAPTIVE
+   --------------- */
+
+@media (max-width: 900px) {
+    .hpc-hero-inner {
+        grid-template-columns: 1fr;
     }
 
-    to {
-        transform: translateX(0);
+    .hpc-about-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .hpc-collab-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .hpc-products-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .hpc-header-inner {
+        gap: 12px;
+    }
+
+    .hpc-nav {
+        display: none;
+        /* при желании можно сделать бургер */
     }
 }
 
-@keyframes bounce {
-
-    0%,
-    100% {
-        transform: translateY(0);
+@media (max-width: 600px) {
+    .hpc-main {
+        padding-bottom: 10px;
     }
 
-    50% {
-        transform: translateY(-10px);
+    .hpc-hero-title {
+        font-size: 30px;
     }
-}
 
-.cart-drawer-open {
-    animation: slideInRight 0.3s ease-out;
-}
+    .hpc-header-inner {
+        padding-inline: 14px;
+    }
 
-.cart-bounce {
-    animation: bounce 0.6s ease;
-}
-
-/* Responsive adjustments */
-@media (max-width: 640px) {
-    .hero h1 {
-        font-size: 3rem;
-        line-height: 1.2;
+    .hpc-section-head {
+        flex-direction: column;
+        align-items: flex-start;
     }
 }
 
-/* Additional utility styles */
-.text-ios-text {
-    color: var(--ios-text);
+.hpc-credit-icon {
+    width: 20px;
+    height: 20px;
+    border-radius: 999px;
+    background: #111;
+    color: #fff;
+    font-size: 11px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.text-ios-text-secondary {
-    color: var(--ios-text-secondary);
+/* Нижний credit‑footer */
+
+.hpc-footer-credit {
+    padding: 8px 0 12px;
+    text-align: center;
+    font-size: 14px;
+    /* крупнее текст */
+    color: rgba(0, 0, 0, 0.7);
+    background: transparent;
+    /* убираем сплошную полосу */
 }
 
-.bg-ios-card {
-    background: var(--ios-card);
+/* сама «пилюля» с гитхабом */
+.hpc-credit-link {
+    display: inline-flex;
+    /* чтобы центрировалась как элемент */
+    align-items: center;
+    gap: 8px;
+    padding: 10px 22px;
+    /* чуть больше, выглядит массивнее */
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+    text-decoration: none;
+    max-width: 340px;
+    /* ограничиваем ширину */
+    width: auto;
+    /* НЕ 100% */
+    margin: 0 auto;
+    /* на всякий случай центр по контейнеру */
 }
 
-.border-ios-border {
-    border-color: var(--ios-border);
+.hpc-credit-link:hover {
+    background: #111111;
+    color: #ffffff;
 }
 
-.text-ios-primary {
-    color: var(--ios-primary);
+/* иконка GitHub слева */
+.hpc-credit-icon {
+    font-size: 18px;
+    color: #111111;
 }
 
-.text-ios-danger {
-    color: var(--ios-danger);
+.hpc-credit-link:hover .hpc-credit-icon {
+    color: #ffffff;
 }
 
-.backdrop-blur-ios {
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+/* текст внутри бейджа */
+.hpc-credit-text {
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    font-size: 13px;
 }
-
-/* Line clamp utility */
-.line-clamp-2 {
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-}
-
-/* Group hover utilities */
-.group:hover .group-hover\:scale-110 {
-    transform: scale(1.1);
-}
-
-/* Scoped color for specific subtexts */
-:root{ --subtext-color: #FF9F0A; }
-@media (prefers-color-scheme: dark){ :root{ --subtext-color: #FFD1A6; } }
-.subtext-colored{ color: var(--subtext-color) !important; }

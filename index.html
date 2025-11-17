@@ -3,221 +3,256 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jul.candles — Осенняя коллекция</title>
-  <meta name="description"
-    content="Осенняя коллекция Jul.candles — ручные свечи из соевого воска. Тёплые ароматы, стеклянный дизайн, быстрая доставка.">
+  <title>Home People Club — свечи для дома</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Jul.Candles — ароматические свечи и уютные вещи для дома." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-    rel="stylesheet">
-
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            'ios-primary': '#007AFF',
-            'ios-secondary': '#5856D6',
-            'ios-background': '#F2F2F7',
-            'ios-card': '#FFFFFF',
-            'ios-text': '#000000',
-            'ios-text-secondary': '#8E8E93',
-            'ios-border': '#C6C6C8',
-            'ios-accent': '#FF9500',
-            'ios-success': '#34C759',
-            'ios-danger': '#FF3B30'
-          },
-          fontFamily: {
-            'ios': ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', 'sans-serif']
-          },
-          backdropBlur: {
-            'ios': '20px'
-          }
-        }
-      }
-    }
-  </script>
-
-  <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-  <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="font-ios text-ios-text">
-  <custom-navbar></custom-navbar>
+<body id="top">
+  <!-- HEADER -->
+  <header class="hpc-header">
+    <div class="hpc-header-inner">
+      <a href="#top" class="hpc-logo">
+        Jul.Candles
+      </a>
 
-  <main>
+      <nav class="hpc-nav">
+        <a href="#shop" class="hpc-nav-link">магазин</a>
+        <a href="#about" class="hpc-nav-link">о бренде</a>
+        <a href="#collab" class="hpc-nav-link">давайте дружить</a>
+        <a href="#contacts" class="hpc-nav-link">контакты</a>
+      </nav>
+
+      <button id="cartFab" class="hpc-cart-button" type="button">
+        корзина
+        <span id="cartCount" class="hpc-cart-count">0</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main class="hpc-main">
     <!-- HERO -->
-    <section class="relative min-h-screen flex items-center justify-center overflow-hidden" id="home">
-      <div class="absolute inset-0 bg-gradient-to-br from-white/10 via-white/5 to-transparent"></div>
-      <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
-        <div class="inline-flex items-center px-4 py-2 rounded-full shadow-lg mb-6"
-          style="background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.3);">
-          <span class="text-xs font-semibold uppercase tracking-wider"
-            style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
-            Осень 2025
-          </span>
+    <section class="hpc-hero">
+      <div class="hpc-hero-inner">
+        <div class="hpc-hero-text">
+          <p class="hpc-hero-kicker">клуб любителей красивого дома</p>
+          <h1 class="hpc-hero-title">
+            Свечи, которые хочется оставлять у себя.
+          </h1>
+          <p class="hpc-hero-subtitle">
+            Небольшие партии, продуманные ароматы и аккуратный дизайн —
+            для вечеров, когда дом становится главным местом в мире.
+          </p>
+
+          <div class="hpc-hero-actions">
+            <!-- <a href="#shop" class="hpc-btn hpc-btn-primary">в магазин</a> -->
+            <button type="button" class="hpc-btn hpc-btn-ghost"
+              onclick="document.getElementById('shop').scrollIntoView({behavior: 'smooth'})">
+              в магазин
+            </button>
+          </div>
         </div>
-        <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight"
-          style="color: white; text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);">
-          Тёплый свет и<br>
-          <span
-            style="background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
-            натуральные
-          </span> ароматы
-        </h1>
-        <p class="text-xl mb-8 max-w-2xl mx-auto leading-relaxed"
-          style="color: rgba(255, 255, 255, 0.9); text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);">
-          Ручные свечи из 100% соевого воска. Хлопковые фитили, чистое горение и уют в каждой детали.
+
+        <div class="hpc-hero-media">
+          <!-- скрывается стилями, фон идёт на весь hero через ::before -->
+          <div class="hpc-hero-image hpc-hero-image-main"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SHOP / CATALOG -->
+    <section class="hpc-shop" id="shop">
+      <div class="hpc-section-head">
+        <div>
+          <h2 class="hpc-section-title">Магазин</h2>
+          <p class="hpc-section-subtitle">
+            Ароматические свечи и небольшие радости для дома.
+          </p>
+        </div>
+        <!-- кнопка "смотреть всё" убрана по требованию -->
+      </div>
+
+      <div id="productsGrid" class="hpc-products-grid"></div>
+
+      <div id="productsGrid" class="hpc-products-grid"></div>
+
+      <div class="hpc-load-more-wrap">
+        <button id="loadMoreBtn" class="hpc-btn hpc-btn-ghost hpc-load-more">
+          загрузить ещё
+        </button>
+      </div>
+    </section>
+
+    <!-- INFO / ABOUT -->
+    <section class="hpc-about" id="about">
+      <div class="hpc-section-head">
+        <h2 class="hpc-section-title">О бренде</h2>
+      </div>
+
+      <div class="hpc-about-grid">
+        <div class="hpc-about-block">
+          <h3 class="hpc-about-title">маленькие партии</h3>
+          <p class="hpc-about-text">
+            Каждая свеча собирается вручную: так легче контролировать качество,
+            тестировать ароматы и не делать ничего «про запас».
+          </p>
+        </div>
+        <div class="hpc-about-block">
+          <h3 class="hpc-about-title">чистый состав</h3>
+          <p class="hpc-about-text">
+            Соевый и пчелиный воск, хлопковые или деревянные фитили и
+            ароматические композиции, подобранные под атмосферу дома.
+          </p>
+        </div>
+        <div class="hpc-about-block">
+          <h3 class="hpc-about-title">дом как ритуал</h3>
+          <p class="hpc-about-text">
+            Свечи — не просто запах, а повод сделать паузу: зажечь фитиль,
+            сварить чай и дать себе немного времени на себя.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- NARROW IMAGE DIVIDER (FULL WIDTH) -->
+    <section class="hpc-divider-image">
+      <div class="hpc-divider-bg"></div>
+    </section>
+
+    <!-- COLLAB / B2B -->
+    <section class="hpc-collab" id="collab">
+      <div class="hpc-section-head">
+        <div>
+          <h2 class="hpc-section-title">Давайте дружить</h2>
+          <p class="hpc-section-subtitle">
+            Брендированные свечи, опт и совместные проекты.
+          </p>
+        </div>
+      </div>
+
+      <div class="hpc-collab-grid">
+        <div class="hpc-collab-list">
+          <div class="hpc-collab-item">
+            <span class="hpc-collab-num">01</span>
+            <p class="hpc-collab-text">
+              Делаем брендированные свечи для кафе, магазинов и мероприятий.
+            </p>
+          </div>
+          <div class="hpc-collab-item">
+            <span class="hpc-collab-num">02</span>
+            <p class="hpc-collab-text">
+              Предлагаем оптовое сотрудничество для шоурумов и концепт‑сторов.
+            </p>
+          </div>
+          <div class="hpc-collab-item">
+            <span class="hpc-collab-num">03</span>
+            <p class="hpc-collab-text">
+              Открыты к коллаборациям и спецвыпускам под конкретные проекты.
+            </p>
+          </div>
+        </div>
+
+        <form id="collabForm" class="hpc-form">
+          <p class="hpc-form-title">
+            Есть идея для совместного проекта?
+          </p>
+          <p class="hpc-form-text">
+            Расскажите, что вы делаете, и какую задачу могут решить наши свечи.
+          </p>
+
+          <label class="hpc-field">
+            <span class="hpc-field-label">Ваше имя</span>
+            <input id="collabName" type="text" name="name" placeholder="Как к вам обращаться" required />
+          </label>
+
+          <label class="hpc-field">
+            <span class="hpc-field-label">E-mail</span>
+            <input id="collabEmail" type="email" name="email" placeholder="example@mail.com" required />
+          </label>
+
+          <label class="hpc-field">
+            <span class="hpc-field-label">Расскажите о проекте</span>
+            <textarea id="collabProject" name="project" rows="3"
+              placeholder="Формат, сроки, бюджет — всё, что важно упомянуть." required></textarea>
+          </label>
+
+          <p class="hpc-form-note">
+            мы не собираем ваши данные, только формируем сообщение по форме.
+          </p>
+
+          <button type="button" class="hpc-btn hpc-btn-primary" id="collabSubmit">
+            отправить заявку
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- CONTACTS / FOOTER --> <!-- CONTACTS / FOOTER -->
+    <section class="hpc-contacts" id="contacts">
+      <div class="hpc-section-head">
+        <h2 class="hpc-section-title">Контакты</h2>
+      </div>
+
+      <div class="hpc-contacts-inner">
+        <p class="hpc-contacts-text">
+          По любым вопросам о заказах, сотрудничестве или прессе можно написать
+          на почту или в Telegram:
+          <a href="mailto:bokyed@yandex.ru" class="hpc-link">bokyed@yandex.ru</a>,
+          <a href="https://t.me/bokyed" target="_blank" rel="noreferrer" class="hpc-link">
+            Telegram
+          </a>
         </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-          <a href="#collection" class="ios-button-primary">
-            <i data-feather="shopping-bag" class="w-5 h-5 mr-2"></i>
-            Смотреть коллекцию
-          </a>
-          <a href="#faq" class="ios-button-secondary">
-            <i data-feather="help-circle" class="w-5 h-5 mr-2"></i>
-            FAQ
-          </a>
-        </div>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-3 max-w-2xl mx-auto">
-          <div class="ios-chip">
-            <i data-feather="leaf" class="w-4 h-4 mr-1"></i>
-            Соевый воск
-          </div>
-          <div class="ios-chip">
-            <i data-feather="droplet" class="w-4 h-4 mr-1"></i>
-            Эфирные масла
-          </div>
-          <div class="ios-chip">
-            <i data-feather="package" class="w-4 h-4 mr-1"></i>
-            Эко-упаковка
-          </div>
-          <div class="ios-chip">
-            <i data-feather="zap" class="w-4 h-4 mr-1"></i>
-            Чистое горение
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- COLLECTION -->
-    <section id="collection" class="py-20 px-6">
-      <div class="max-w-7xl mx-auto">
-        <div class="text-center mb-12">
-          <h2 class="text-4xl font-bold mb-4">Новогодняя коллекция</h2>
-          <p class="text-ios-text-secondary text-lg subtext-colored">
-            Семь ароматов сезона — от имбирного пряника до пряного глинтвейна. Цены от 300 до 1500 ₽.
-          </p>
-        </div>
-        <div id="productsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
-      </div>
-    </section>
-
-    <!-- STORY -->
-    <section id="story" class="py-20 px-6">
-      <div class="max-w-4xl mx-auto">
-        <div class="ios-card p-8 rounded-3xl shadow-xl">
-          <h3 class="text-3xl font-bold mb-4">История Jul.candles</h3>
-          <p class="text-ios-text-secondary text-lg leading-relaxed">
-            Небольшие партии, ручной контроль качества и ароматические композиции, вдохновлённые зимой:
-            мамин какао, пряный глинтвейн, морозное утро, сибирская облепиха, рождественский очаг, имбирный пряник,
-            мандарин.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ -->
-    <section id="faq" class="py-20 px-6">
-      <div class="max-w-4xl mx-auto">
-        <div class="text-center mb-12">
-          <h2 class="text-4xl font-bold mb-4">FAQ</h2>
-          <p class="text-ios-text-secondary text-lg subtext-colored">Частые вопросы о составе, доставке и упаковке.</p>
-        </div>
-        <div class="space-y-4">
-          <details class="ios-accordion">
-            <summary class="ios-accordion-summary">
-              <i data-feather="info" class="w-5 h-5 mr-3"></i>
-              Из чего сделаны свечи?
-            </summary>
-            <div class="ios-accordion-content">
-              <p class="text-ios-text-secondary">100% натуральный соевый и пчелиный воск, хлопковый/деревянный фитиль и
-                ароматические отдушки на выбор.
-              </p>
-            </div>
-          </details>
-          <details class="ios-accordion">
-            <summary class="ios-accordion-summary">
-              <i data-feather="shopping-cart" class="w-5 h-5 mr-3"></i>
-              Как оформить заказ?
-            </summary>
-            <div class="ios-accordion-content">
-              <p class="text-ios-text-secondary">Добавьте товары в корзину и нажмите «Оформить в Telegram» — детали
-                доставки обсудим в чате.</p>
-            </div>
-          </details>
-          <details class="ios-accordion">
-            <summary class="ios-accordion-summary">
-              <i data-feather="gift" class="w-5 h-5 mr-3"></i>
-              Есть ли подарочная упаковка?
-            </summary>
-            <div class="ios-accordion-content">
-              <p class="text-ios-text-secondary">Да, упакуем бесплатно в крафт-коробку с лентой и открыткой.</p>
-            </div>
-          </details>
+        <div class="hpc-contacts-social">
+          <!-- если нужны соцкнопки — можно добавить сюда -->
         </div>
       </div>
     </section>
   </main>
 
-  <!-- CART OVERLAY -->
-  <div id="cartOverlay" class="fixed inset-0 bg-black/30 backdrop-blur-ios z-40 hidden"></div>
+  <!-- SITE CREDIT -->
+  <footer class="hpc-footer-credit">
+    <a href="https://github.com/introducWellDown" target="_blank" rel="noreferrer" class="hpc-credit-link">
+      <span class="hpc-credit-icon" aria-hidden="true">
+        <i class="fa-brands fa-github"></i>
+      </span>
+      <span class="hpc-credit-text">
+        Created by introducWellDown
+      </span>
+    </a>
+  </footer>
 
-  <!-- CART DRAWER -->
-  <aside id="cartDrawer"
-    class="fixed right-0 top-0 h-full w-full max-w-md shadow-2xl z-50 transform translate-x-full transition-transform duration-300 ease-out"
-    style="background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-left: 1px solid rgba(255, 255, 255, 0.3);">
-    <div class="flex items-center justify-between p-6" style="border-bottom: 1px solid rgba(255, 255, 255, 0.2);">
-      <h4 class="text-2xl font-bold">Корзина</h4>
-      <button id="cartClose" class="ios-icon-button">
-        <i data-feather="x" class="w-6 h-6"></i>
-      </button>
-    </div>
-    <div id="cartItems" class="flex-1 overflow-y-auto p-6"></div>
-    <div class="p-6" style="border-top: 1px solid rgba(255, 255, 255, 0.2);">
-      <div class="flex items-center justify-between mb-4">
-        <span class="text-lg font-semibold">Итого</span>
-        <span id="cartTotal" class="text-2xl font-bold"
-          style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
-          0 ₽
-        </span>
+  <!-- CART DRAWER (правый сайдбар) -->
+  <div id="cartDrawer" class="cart-drawer" aria-hidden="true">
+    <div id="cartDrawerBackdrop" class="cart-drawer-backdrop"></div>
+
+    <aside class="cart-drawer-panel">
+      <header class="cart-drawer-header">
+        <h2>Корзина</h2>
+        <button id="cartClose" type="button" aria-label="Закрыть">×</button>
+      </header>
+
+      <div id="cartList" class="cart-drawer-list">
+        <!-- сюда script.js вставит позиции корзины -->
       </div>
-      <button id="checkoutBtn" class="ios-button-primary w-full">
-        <i data-feather="send" class="w-5 h-5 mr-2"></i>
-        Оформить в Telegram
-      </button>
-    </div>
-  </aside>
 
-  <!-- FLOATING ACTION BUTTON -->
-  <button id="cartFab"
-    class="fixed bottom-6 right-6 w-16 h-16 rounded-full shadow-lg flex items-center justify-center transition-all duration-200 z-30"
-    style="background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.3); color: #1a1a1a;">
-    <i data-feather="shopping-bag" class="w-6 h-6"></i>
-    <span id="cartCount"
-      class="absolute -top-2 -right-2 w-6 h-6 text-white text-xs font-bold rounded-full flex items-center justify-center"
-      style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">0</span>
-  </button>
+      <footer class="cart-drawer-footer">
+        <div class="cart-drawer-total">
+          Итого: <span id="cartTotal">0 ₽</span>
+        </div>
+        <button id="checkoutBtn" type="button" class="cart-drawer-checkout">
+          Оформить в Telegram
+        </button>
+      </footer>
+    </aside>
+  </div>
 
-  <custom-footer></custom-footer>
-
-  <script src="components/navbar.js"></script>
-  <script src="components/footer.js"></script>
+  <!-- Оверлей товара генерируется и стилизуется внутри script.js -->
   <script src="script.js"></script>
-  <script>feather.replace();</script>
 </body>
 
 </html>
