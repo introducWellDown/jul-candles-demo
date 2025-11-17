@@ -12,6 +12,14 @@
    ----------------------------- */
 
 // Если у тебя уже есть свой массив products, замени пример ниже своим.
+const scents_list = ['Мандарин',
+  'Мамин какао',
+  'Имбирный пряник',
+  'Морозное утро',
+  'Пряный глинтвейн',
+  'Рождественский очаг',
+  'Сибирская облепиха',
+]
 const products = [
   {
     id: 1,
@@ -24,191 +32,200 @@ const products = [
       'resource/cards_image/manda_3k.jpg',
       'resource/cards_image/manda_mnogo.jpg'
     ],
-    scents: ['Мандарин'],
+    scents: scents_list,
     badge: 'хит'
   },
   {
     id: 2,
-    name: 'Мандаринка',
-    price: 300,
-    desc: 'Свеча, которая точно скрасит празднование Нового Года',
+    name: 'Ёлка',
+    price: 500,
+    desc: 'Подарит атмосферу зимних праздников',
     imgs: [
-      'resource/cards_image/manda_solo.jpg',
-      'resource/cards_image/manda_k.jpg',
-      'resource/cards_image/manda_3k.jpg',
-      'resource/cards_image/manda_mnogo.jpg'
+      'resource/cards_image/elka_state_sneg.jpg',
+      'resource/cards_image/elka_r.jpg',
     ],
-    scents: ['Мандарин'],
+    scents: scents_list,
     badge: 'хит'
   },
   {
     id: 3,
-    name: 'Мандаринка',
-    price: 300,
-    desc: 'Свеча, которая точно скрасит празднование Нового Года',
+    name: 'Карусель (Белая)',
+    price: 1500,
+    desc: 'Свеча, возвращающая в детство',
     imgs: [
-      'resource/cards_image/manda_solo.jpg',
-      'resource/cards_image/manda_k.jpg',
-      'resource/cards_image/manda_3k.jpg',
-      'resource/cards_image/manda_mnogo.jpg'
+      'resource/cards_image/white_solo.jpg',
+      'resource/cards_image/test.jpg',
     ],
-    scents: ['Мандарин'],
+    scents: scents_list,
     badge: 'хит'
   },
   {
     id: 4,
-    name: 'Мандаринка',
-    price: 300,
-    desc: 'Свеча, которая точно скрасит празднование Нового Года',
+    name: 'Карусель (Красная)',
+    price: 1500,
+    desc: 'Свеча, возвращающая в детство',
     imgs: [
-      'resource/cards_image/manda_solo.jpg',
-      'resource/cards_image/manda_k.jpg',
-      'resource/cards_image/manda_3k.jpg',
-      'resource/cards_image/manda_mnogo.jpg'
+      'resource/cards_image/white_solo.jpg',
+      'resource/cards_image/test.jpg',
     ],
-    scents: ['Мандарин'],
+    scents: scents_list,
     badge: 'хит'
   },
   {
     id: 5,
-    name: 'Мандаринка',
-    price: 300,
-    desc: 'Свеча, которая точно скрасит празднование Нового Года',
+    name: 'Новогодний шарик',
+    price: 700,
+    desc: 'Идеальное дополнение к новогоднему декору',
     imgs: [
-      'resource/cards_image/manda_solo.jpg',
-      'resource/cards_image/manda_k.jpg',
-      'resource/cards_image/manda_3k.jpg',
-      'resource/cards_image/manda_mnogo.jpg'
+      'resource/cards_image/white.jpg',
+      'resource/cards_image/white_state.jpg',
     ],
-    scents: ['Мандарин'],
+    scents: scents_list,
     badge: 'хит'
   },
   {
     id: 6,
-    name: 'Мандаринка',
-    price: 300,
-    desc: 'Свеча, которая точно скрасит празднование Нового Года',
+    name: 'Олень',
+    price: 400,
+    desc: 'Дарит атмосферу уюта',
     imgs: [
-      'resource/cards_image/manda_solo.jpg',
-      'resource/cards_image/manda_k.jpg',
-      'resource/cards_image/manda_3k.jpg',
-      'resource/cards_image/manda_mnogo.jpg'
+      'resource/cards_image/olen_k.jpg',
+      'resource/cards_image/olen_e.jpg',
+      'resource/cards_image/olen_state.jpg',
     ],
-    scents: ['Мандарин'],
+    scents: scents_list,
     badge: 'хит'
   },
   {
-    id: 7,
-    name: 'Мандаринка',
+    id: 6,
+    name: 'Свечка в банке',
     price: 300,
-    desc: 'Свеча, которая точно скрасит празднование Нового Года',
+    desc: 'Скрасит зимние вечера',
     imgs: [
-      'resource/cards_image/manda_solo.jpg',
-      'resource/cards_image/manda_k.jpg',
-      'resource/cards_image/manda_3k.jpg',
-      'resource/cards_image/manda_mnogo.jpg'
+      'resource/cards_image/banka_ip.jpg',
+      'resource/cards_image/banka_m.jpg',
+      'resource/cards_image/banka_mk.jpg',
+      'resource/cards_image/banka_nu.jpg',
+      'resource/cards_image/banka_pg.jpg',
+      'resource/cards_image/banka_ro.jpg',
+      'resource/cards_image/banka_so.jpg',
+
     ],
-    scents: ['Мандарин'],
-    badge: 'хит'
+    scents: scents_list,
+    badge: 'хит',
   },
-  {
-    id: 8,
-    name: 'Мандаринка',
-    price: 300,
-    desc: 'Свеча, которая точно скрасит празднование Нового Года',
-    imgs: [
-      'resource/cards_image/manda_solo.jpg',
-      'resource/cards_image/manda_k.jpg',
-      'resource/cards_image/manda_3k.jpg',
-      'resource/cards_image/manda_mnogo.jpg'
-    ],
-    scents: ['Мандарин'],
-    badge: 'хит'
-  },
-  {
-    id: 9,
-    name: 'Мандаринка',
-    price: 300,
-    desc: 'Свеча, которая точно скрасит празднование Нового Года',
-    imgs: [
-      'resource/cards_image/manda_solo.jpg',
-      'resource/cards_image/manda_k.jpg',
-      'resource/cards_image/manda_3k.jpg',
-      'resource/cards_image/manda_mnogo.jpg'
-    ],
-    scents: ['Мандарин'],
-    badge: 'хит'
-  },
-  {
-    id: 10,
-    name: 'Мандаринка',
-    price: 300,
-    desc: 'Свеча, которая точно скрасит празднование Нового Года',
-    imgs: [
-      'resource/cards_image/manda_solo.jpg',
-      'resource/cards_image/manda_k.jpg',
-      'resource/cards_image/manda_3k.jpg',
-      'resource/cards_image/manda_mnogo.jpg'
-    ],
-    scents: ['Мандарин'],
-    badge: 'хит'
-  },
-  {
-    id: 11,
-    name: 'Мандаринка',
-    price: 300,
-    desc: 'Свеча, которая точно скрасит празднование Нового Года',
-    imgs: [
-      'resource/cards_image/manda_solo.jpg',
-      'resource/cards_image/manda_k.jpg',
-      'resource/cards_image/manda_3k.jpg',
-      'resource/cards_image/manda_mnogo.jpg'
-    ],
-    scents: ['Мандарин'],
-    badge: 'хит'
-  },
-  {
-    id: 12,
-    name: 'Мандаринка',
-    price: 300,
-    desc: 'Свеча, которая точно скрасит празднование Нового Года',
-    imgs: [
-      'resource/cards_image/manda_solo.jpg',
-      'resource/cards_image/manda_k.jpg',
-      'resource/cards_image/manda_3k.jpg',
-      'resource/cards_image/manda_mnogo.jpg'
-    ],
-    scents: ['Мандарин'],
-    badge: 'хит'
-  },
-  {
-    id: 13,
-    name: 'Мандаринка',
-    price: 300,
-    desc: 'Свеча, которая точно скрасит празднование Нового Года',
-    imgs: [
-      'resource/cards_image/manda_solo.jpg',
-      'resource/cards_image/manda_k.jpg',
-      'resource/cards_image/manda_3k.jpg',
-      'resource/cards_image/manda_mnogo.jpg'
-    ],
-    scents: ['Мандарин'],
-    badge: 'хит'
-  },
-  {
-    id: 14,
-    name: 'Мандаринка',
-    price: 300,
-    desc: 'Свеча, которая точно скрасит празднование Нового Года',
-    imgs: [
-      'resource/cards_image/manda_solo.jpg',
-      'resource/cards_image/manda_k.jpg',
-      'resource/cards_image/manda_3k.jpg',
-      'resource/cards_image/manda_mnogo.jpg'
-    ],
-    scents: ['Мандарин'],
-    badge: 'хит'
-  },
+  // {
+  //   id: 7,
+  //   name: 'Мандаринка',
+  //   price: 300,
+  //   desc: 'Свеча, которая точно скрасит празднование Нового Года',
+  //   imgs: [
+  //     'resource/cards_image/manda_solo.jpg',
+  //     'resource/cards_image/manda_k.jpg',
+  //     'resource/cards_image/manda_3k.jpg',
+  //     'resource/cards_image/manda_mnogo.jpg'
+  //   ],
+  //   scents: scents_list,
+  //   badge: 'хит'
+  // },
+  // {
+  //   id: 8,
+  //   name: 'Мандаринка',
+  //   price: 300,
+  //   desc: 'Свеча, которая точно скрасит празднование Нового Года',
+  //   imgs: [
+  //     'resource/cards_image/manda_solo.jpg',
+  //     'resource/cards_image/manda_k.jpg',
+  //     'resource/cards_image/manda_3k.jpg',
+  //     'resource/cards_image/manda_mnogo.jpg'
+  //   ],
+  //   scents: scents_list,
+  //   badge: 'хит'
+  // },
+  // {
+  //   id: 9,
+  //   name: 'Мандаринка',
+  //   price: 300,
+  //   desc: 'Свеча, которая точно скрасит празднование Нового Года',
+  //   imgs: [
+  //     'resource/cards_image/manda_solo.jpg',
+  //     'resource/cards_image/manda_k.jpg',
+  //     'resource/cards_image/manda_3k.jpg',
+  //     'resource/cards_image/manda_mnogo.jpg'
+  //   ],
+  //   scents: scents_list,
+  //   badge: 'хит'
+  // },
+  // {
+  //   id: 10,
+  //   name: 'Мандаринка',
+  //   price: 300,
+  //   desc: 'Свеча, которая точно скрасит празднование Нового Года',
+  //   imgs: [
+  //     'resource/cards_image/manda_solo.jpg',
+  //     'resource/cards_image/manda_k.jpg',
+  //     'resource/cards_image/manda_3k.jpg',
+  //     'resource/cards_image/manda_mnogo.jpg'
+  //   ],
+  //   scents: scents_list,
+  //   badge: 'хит'
+  // },
+  // {
+  //   id: 11,
+  //   name: 'Мандаринка',
+  //   price: 300,
+  //   desc: 'Свеча, которая точно скрасит празднование Нового Года',
+  //   imgs: [
+  //     'resource/cards_image/manda_solo.jpg',
+  //     'resource/cards_image/manda_k.jpg',
+  //     'resource/cards_image/manda_3k.jpg',
+  //     'resource/cards_image/manda_mnogo.jpg'
+  //   ],
+  //   scents: scents_list,
+  //   badge: 'хит'
+  // },
+  // {
+  //   id: 12,
+  //   name: 'Мандаринка',
+  //   price: 300,
+  //   desc: 'Свеча, которая точно скрасит празднование Нового Года',
+  //   imgs: [
+  //     'resource/cards_image/manda_solo.jpg',
+  //     'resource/cards_image/manda_k.jpg',
+  //     'resource/cards_image/manda_3k.jpg',
+  //     'resource/cards_image/manda_mnogo.jpg'
+  //   ],
+  //   scents: scents_list,
+  //   badge: 'хит'
+  // },
+  // {
+  //   id: 13,
+  //   name: 'Мандаринка',
+  //   price: 300,
+  //   desc: 'Свеча, которая точно скрасит празднование Нового Года',
+  //   imgs: [
+  //     'resource/cards_image/manda_solo.jpg',
+  //     'resource/cards_image/manda_k.jpg',
+  //     'resource/cards_image/manda_3k.jpg',
+  //     'resource/cards_image/manda_mnogo.jpg'
+  //   ],
+  //   scents: scents_list,
+  //   badge: 'хит'
+  // },
+  // {
+  //   id: 14,
+  //   name: 'Мандаринка',
+  //   price: 300,
+  //   desc: 'Свеча, которая точно скрасит празднование Нового Года',
+  //   imgs: [
+  //     'resource/cards_image/manda_solo.jpg',
+  //     'resource/cards_image/manda_k.jpg',
+  //     'resource/cards_image/manda_3k.jpg',
+  //     'resource/cards_image/manda_mnogo.jpg'
+  //   ],
+  //   scents: scents_list,
+  //   badge: 'хит'
+  // },
   // Добавь остальные товары по этому же формату
 ];
 
