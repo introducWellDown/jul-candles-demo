@@ -268,13 +268,22 @@ function injectOverlayCSS() {
   .pc-dot.active { background: #007AFF; }
 
   /* ============= OVERLAY ============= */
-  .product-overlay {
+    .product-overlay {
     position: fixed;
     inset: 0;
     display: none;
-    align-items: center;
+    align-items: flex-start;        /* вместо center — прижимаем к верху */
     justify-content: center;
     z-index: 999;
+
+    /* даём самому оверлею скролл по вертикали */
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch; /* плавный скролл на мобильных */
+    padding: 16px 0;                  /* небольшой отступ сверху/снизу */
+  }
+
+  .product-overlay.open {
+    display: flex;
   }
   .product-overlay.open { display: flex; }
   .product-overlay-backdrop {
