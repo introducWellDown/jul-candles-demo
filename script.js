@@ -499,8 +499,12 @@ function injectOverlayCSS() {
     border-radius: 16px;
     background: rgba(255,255,255,0.98);
     box-shadow: 0 16px 40px rgba(0,0,0,0.2);
-    max-height: 260px;
+
+    /* главное — сделать список прокручиваемым и вписать в экран */
+    max-height: min(260px, 50vh);   /* не больше половины экрана */
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch; /* плавная прокрутка на iOS */
+
     z-index: 5;
   }
   .overlay-select-option {
