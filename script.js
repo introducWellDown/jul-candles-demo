@@ -28,7 +28,6 @@ const products = [
     imgs: [
       'resource/cards_image/manda_solo.jpg',
       'resource/cards_image/manda_k.jpg',
-      'resource/cards_image/manda_3k.jpg',
       'resource/cards_image/manda_mnogo.jpg'
     ],
     scents: scents_list,
@@ -36,79 +35,124 @@ const products = [
   },
   {
     id: 2,
-    name: 'Ёлка',
-    price: 500,
-    desc: 'Подарит атмосферу зимних праздников',
+    name: 'Набор мандаринок 3 шт.',
+    price: 700,
+    desc: 'Отличный выбор для подарка близким',
     imgs: [
-      'resource/cards_image/elka_state_sneg.jpg',
-      'resource/cards_image/elka_r.jpg',
+      'resource/cards_image/manda_solo.jpg',
+      'resource/cards_image/manda_k.jpg',
+      'resource/cards_image/manda_mnogo.jpg'
     ],
     scents: scents_list,
-    badge: 'хит'
   },
   {
     id: 3,
-    name: 'Карусель (Белая)',
-    price: 1500,
-    desc: 'Свеча, возвращающая в детство',
+    name: 'Ёлка (Зелёная)',
+    price: 500,
+    desc: 'Подарит атмосферу зимних праздников',
     imgs: [
-      'resource/cards_image/white_solo.jpg',
-      'resource/cards_image/test.jpg',
+      'resource/cards_image/elka_r.jpg',
+      'resource/cards_image/elka_state_sneg.jpg',
     ],
     scents: scents_list,
     badge: 'хит'
   },
   {
     id: 4,
-    name: 'Карусель (Красная)',
-    price: 1500,
-    desc: 'Свеча, возвращающая в детство',
+    name: 'Ёлка (Белая)',
+    price: 500,
+    desc: 'Подарит атмосферу зимних праздников',
     imgs: [
-      'resource/cards_image/res_solo.jpg',
-      'resource/cards_image/test.jpg',
+      'resource/cards_image/elka_w.jpg',
+      'resource/cards_image/elka_state_sneg.jpg',
     ],
     scents: scents_list,
     badge: 'хит'
   },
   {
     id: 5,
-    name: 'Новогодний шарик',
-    price: 700,
-    desc: 'Идеальное дополнение к новогоднему декору',
+    name: 'Карусель (Белая)',
+    price: 1500,
+    desc: 'Свеча, возвращающая в детство',
     imgs: [
-      'resource/cards_image/white.jpg',
-      'resource/cards_image/white_state.jpg',
+      'resource/cards_image/white_solo.jpg',
+      'resource/cards_image/banka_white_gold_state.jpg',
+      'resource/cards_image/test.jpg',
     ],
     scents: scents_list,
     badge: 'хит'
   },
   {
     id: 6,
-    name: 'Олень',
-    price: 400,
-    desc: 'Дарит атмосферу уюта',
+    name: 'Карусель (Красная)',
+    price: 1500,
+    desc: 'Свеча, возвращающая в детство',
     imgs: [
-      'resource/cards_image/olen_k.jpg',
-      'resource/cards_image/olen_e.jpg',
-      'resource/cards_image/olen_state.jpg',
+      'resource/cards_image/res_solo.jpg',
+      'resource/cards_image/banka_red_gold_state.jpg.jpg',
+      'resource/cards_image/test.jpg',
     ],
     scents: scents_list,
     badge: 'хит'
   },
   {
     id: 7,
+    name: 'Карусель (Без гравюры)',
+    price: 1300,
+    desc: 'Свеча, возвращающая в детство',
+    imgs: [
+      'resource/cards_image/loshady_prost.jpg',
+    ],
+    scents: scents_list,
+    badge: 'хит'
+  },
+  {
+    id: 8,
+    name: 'Новогодний шарик',
+    price: 700,
+    desc: 'Идеальное дополнение к новогоднему декору',
+    imgs: [
+      'resource/cards_image/white.jpg',
+      'resource/cards_image/war_open.jpg',
+      'resource/cards_image/war_close.jpg',
+    ],
+    scents: scents_list,
+    badge: 'хит'
+  },
+  {
+    id: 9,
+    name: 'Новогодний шарик (Мятный)',
+    price: 700,
+    desc: 'Идеальное дополнение к новогоднему декору',
+    imgs: [
+      'resource/cards_image/war_miata_state.jpg',
+      'resource/cards_image/war_miata_state_2.jpg',
+    ],
+    scents: scents_list,
+    badge: 'хит'
+  },
+  {
+    id: 10,
+    name: 'Олень',
+    price: 400,
+    desc: 'Дарит атмосферу уюта',
+    imgs: [
+      'resource/cards_image/olen_e.jpg',
+      'resource/cards_image/olen_k.jpg',
+      'resource/cards_image/olen_state.jpg',
+    ],
+    scents: scents_list,
+    badge: 'хит'
+  },
+  {
+    id: 11,
     name: 'Свечка в банке',
     price: 900,
     desc: 'Скрасит зимние вечера',
     imgs: [
-      'resource/cards_image/banka_ip.jpg',
-      'resource/cards_image/banka_m.jpg',
-      'resource/cards_image/banka_mk.jpg',
-      'resource/cards_image/banka_nu.jpg',
-      'resource/cards_image/banka_pg.jpg',
-      'resource/cards_image/banka_ro.jpg',
-      'resource/cards_image/banka_so.jpg',
-
+      'resource/cards_image/banka_vse.jpg',
+      'resource/cards_image/banka_fet_1.jpg',
+      'resource/cards_image/banka_fet_2.jpg',
     ],
     scents: scents_list,
     badge: 'хит',
