@@ -71,7 +71,7 @@ const products = [
   },
   {
     id: 5,
-    name: 'Карусель (Белая)',
+    name: 'Карусель с золотом (Белая)',
     price: 1500,
     desc: 'Свеча, возвращающая в детство',
     imgs: [
@@ -84,7 +84,7 @@ const products = [
   },
   {
     id: 6,
-    name: 'Карусель (Красная)',
+    name: 'Карусель с золотом (Красная)',
     price: 1500,
     desc: 'Свеча, возвращающая в детство',
     imgs: [
@@ -97,7 +97,7 @@ const products = [
   },
   {
     id: 7,
-    name: 'Карусель (Без гравюры)',
+    name: 'Карусель (Красная)',
     price: 1300,
     desc: 'Свеча, возвращающая в детство',
     imgs: [
@@ -108,6 +108,17 @@ const products = [
   },
   {
     id: 8,
+    name: 'Карусель (Белая)',
+    price: 1300,
+    desc: 'Свеча, возвращающая в детство',
+    imgs: [
+      'resource/cards_image/loshady_prost.jpg',
+    ],
+    scents: scents_list,
+    badge: 'хит'
+  },
+  {
+    id: 9,
     name: 'Новогодний шарик',
     price: 700,
     desc: 'Идеальное дополнение к новогоднему декору',
@@ -120,7 +131,7 @@ const products = [
     badge: 'хит'
   },
   {
-    id: 9,
+    id: 10,
     name: 'Новогодний шарик (Мятный)',
     price: 700,
     desc: 'Идеальное дополнение к новогоднему декору',
@@ -132,7 +143,7 @@ const products = [
     badge: 'хит'
   },
   {
-    id: 10,
+    id: 11,
     name: 'Олень',
     price: 400,
     desc: 'Дарит атмосферу уюта',
@@ -145,12 +156,12 @@ const products = [
     badge: 'хит'
   },
   {
-    id: 11,
+    id: 12,
     name: 'Свечка в банке',
     price: 900,
     desc: 'Скрасит зимние вечера',
     imgs: [
-      'resource/cards_image/banka_vse.jpg',
+      'resource/cards_image/banki_vse.jpg',
       'resource/cards_image/banka_fet_1.jpg',
       'resource/cards_image/banka_fet_2.jpg',
     ],
