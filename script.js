@@ -39,9 +39,9 @@ const products = [
     price: 700,
     desc: 'Отличный выбор для подарка близким',
     imgs: [
-      'resource/cards_image/manda_solo.jpg',
-      'resource/cards_image/manda_k.jpg',
-      'resource/cards_image/manda_mnogo.jpg'
+      'resource/cards_image/manda3_new.jpg',
+      'resource/cards_image/manda3_nice.jpg',
+      'resource/cards_image/manda3_real.jpg'
     ],
     scents: scents_list,
   },
@@ -89,7 +89,7 @@ const products = [
     desc: 'Свеча, возвращающая в детство',
     imgs: [
       'resource/cards_image/res_solo.jpg',
-      'resource/cards_image/banka_red_gold_state.jpg.jpg',
+      'resource/cards_image/banka_red_gold_state.jpg',
       'resource/cards_image/test.jpg',
     ],
     scents: scents_list,
